@@ -12,7 +12,7 @@ export class BookmarksService {
     });
     if (!event) throw new NotFoundException('Event not found');
 
-    // Look for existing bookmark
+    // Look for existing bookmark in database
     const existingBookmark = await this.prisma.bookmark.findUnique({
       where: {
         userId_eventId: { userId, eventId },
